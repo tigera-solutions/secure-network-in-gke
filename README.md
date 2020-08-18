@@ -75,8 +75,6 @@ gcloud compute networks create ${NET_NAME} --project=${GOOGLE_PROJECT} --subnet-
 # subnet range must not overlap with other subnets for selected region
 gcloud compute networks subnets create ${NET_NAME}-subnet1 --project=${GOOGLE_PROJECT} --range=10.8.0.0/16 --network=${NET_NAME} --region=us-west1 --enable-private-ip-google-access
 gcloud compute networks subnets create ${NET_NAME}-subnet2 --project=${GOOGLE_PROJECT} --range=10.9.0.0/16 --network=${NET_NAME} --region=us-west2 --enable-private-ip-google-access
-gcloud compute networks subnets create ${NET_NAME}-subnet3 --project=${GOOGLE_PROJECT} --range=10.17.0.0/16 --network=${NET_NAME} --region=us-central1 --enable-private-ip-google-access
-gcloud compute networks subnets create ${NET_NAME}-subnet4 --project=${GOOGLE_PROJECT} --range=10.24.0.0/16 --network=${NET_NAME} --region=us-east1 --enable-private-ip-google-access
 # get network reference
 NET_REF=$(gcloud compute networks list --filter="name=${NET_NAME}" --format="value(selfLink)")
 # get subnet reference
